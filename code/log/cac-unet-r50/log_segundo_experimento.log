@@ -1,0 +1,350 @@
+[2024-12-12 11:20:03,321-INFO]: DATASET:
+  ANNS: ../datalist/train_010.json
+  CENTER_CROP: 1.0
+  IMAGEDIR: ../data/pos-patches
+  NORMALIZE: False
+  NUM_SAMPLES: -1
+  RESIZE_SCALE: 1.0
+  RESIZE_SIZE: [512, 512]
+  TARGET:
+    ANNS: 
+    IMAGEDIR: 
+    TYPE: 
+  TYPE: DigestDataset
+  USE_AUG: True
+  VAL:
+    ANNS: ../datalist/val_010.json
+    CENTER_CROP: 1.0
+    IMAGEDIR: ../data/pos-patches
+    REDUCE: sum
+    RESIZE_SCALE: 1.0
+    RESIZE_SIZE: [512, 512]
+    TYPE: DigestDataset
+  WITH_EMPTY: True
+MODEL:
+  BACKBONE:
+    PRETRAINED: True
+    TYPE: R-50-C1-C5
+    WITH_IBN: True
+  DECODER:
+    TYPE: UnetDecoderV2-H
+  DISCRIMINATOR:
+    LOSS: BCEWithLogits
+    LR: []
+    SMOOTH: False
+    TYPE: []
+    UPDATE_T: 1.0
+    WEIGHT: []
+  PREDICTOR:
+    LOSS: diceloss
+    NUM_CLASSES: 2
+    TYPE: BasePredictor
+  TYPE: Generalized_Segmentor
+TRAIN:
+  APEX_OPT: O1
+  BATCHSIZE: 4
+  COSINEANNEALINGLR:
+    T_MAX: 1
+    T_MULT: 1.0
+  EARLY_STOPPING: -1
+  EPOCHES: 12
+  ITER_REPORT: 100
+  ITER_VAL: 1
+  LAST_EPOCH: 0
+  LR: 0.01
+  MULTISTEPLR:
+    GAMMA: 1.0
+    MILESTONES: []
+  OPTIMIZER: Ranger
+  POS_WEIGHT: []
+  SAVE_ALL: True
+  SCHEDULER: 
+  WEIGHT: []
+WORK_DIR: log/cac-unet-r50
+[2024-12-12 11:20:03,322-INFO]: resume from epoch 0
+[2024-12-12 11:20:03,322-INFO]: Start training!
+[2024-12-12 11:21:50,673-INFO]: eta: 7h 55min, epoch: 1, iter: 4.38%, lr: 1.00e-02, loss: 0.274223
+[2024-12-12 11:23:35,298-INFO]: eta: 7h 46min, epoch: 1, iter: 8.76%, lr: 1.00e-02, loss: 0.244288
+[2024-12-12 11:25:20,055-INFO]: eta: 7h 56min, epoch: 1, iter: 13.14%, lr: 1.00e-02, loss: 0.233926
+[2024-12-12 11:27:04,739-INFO]: eta: 7h 49min, epoch: 1, iter: 17.52%, lr: 1.00e-02, loss: 0.216735
+[2024-12-12 11:28:49,422-INFO]: eta: 7h 47min, epoch: 1, iter: 21.89%, lr: 1.00e-02, loss: 0.206646
+[2024-12-12 11:30:34,149-INFO]: eta: 7h 56min, epoch: 1, iter: 26.27%, lr: 1.00e-02, loss: 0.199674
+[2024-12-12 11:32:18,876-INFO]: eta: 7h 44min, epoch: 1, iter: 30.65%, lr: 1.00e-02, loss: 0.192803
+[2024-12-12 11:34:03,611-INFO]: eta: 7h 44min, epoch: 1, iter: 35.03%, lr: 1.00e-02, loss: 0.187425
+[2024-12-12 11:35:48,328-INFO]: eta: 7h 51min, epoch: 1, iter: 39.41%, lr: 1.00e-02, loss: 0.182923
+[2024-12-12 11:37:33,111-INFO]: eta: 7h 35min, epoch: 1, iter: 43.79%, lr: 1.00e-02, loss: 0.181665
+[2024-12-12 11:39:17,823-INFO]: eta: 7h 36min, epoch: 1, iter: 48.17%, lr: 1.00e-02, loss: 0.179578
+[2024-12-12 11:41:02,562-INFO]: eta: 7h 43min, epoch: 1, iter: 52.55%, lr: 1.00e-02, loss: 0.177102
+[2024-12-12 11:42:47,276-INFO]: eta: 7h 33min, epoch: 1, iter: 56.92%, lr: 1.00e-02, loss: 0.174979
+[2024-12-12 11:44:32,097-INFO]: eta: 7h 32min, epoch: 1, iter: 61.30%, lr: 1.00e-02, loss: 0.172489
+[2024-12-12 11:46:16,874-INFO]: eta: 7h 38min, epoch: 1, iter: 65.68%, lr: 1.00e-02, loss: 0.170996
+[2024-12-12 11:48:01,629-INFO]: eta: 7h 25min, epoch: 1, iter: 70.06%, lr: 1.00e-02, loss: 0.169846
+[2024-12-12 11:49:46,444-INFO]: eta: 7h 26min, epoch: 1, iter: 74.44%, lr: 1.00e-02, loss: 0.168843
+[2024-12-12 11:51:31,289-INFO]: eta: 7h 32min, epoch: 1, iter: 78.82%, lr: 1.00e-02, loss: 0.167503
+[2024-12-12 11:53:16,125-INFO]: eta: 7h 24min, epoch: 1, iter: 83.20%, lr: 1.00e-02, loss: 0.166859
+[2024-12-12 11:55:00,921-INFO]: eta: 7h 20min, epoch: 1, iter: 87.58%, lr: 1.00e-02, loss: 0.166266
+[2024-12-12 11:56:45,777-INFO]: eta: 7h 27min, epoch: 1, iter: 91.95%, lr: 1.00e-02, loss: 0.164899
+[2024-12-12 11:58:30,581-INFO]: eta: 7h 19min, epoch: 1, iter: 96.33%, lr: 1.00e-02, loss: 0.163854
+[2024-12-12 12:01:57,365-INFO]: epoch: 1, val_dice: 0.8467(0.8467), 0: 0.9449, 1: 0.8467
+[2024-12-12 12:03:43,819-INFO]: eta: 7h 12min, epoch: 2, iter: 4.38%, lr: 1.00e-02, loss: 0.148763
+[2024-12-12 12:05:28,879-INFO]: eta: 7h 15min, epoch: 2, iter: 8.76%, lr: 1.00e-02, loss: 0.149662
+[2024-12-12 12:07:14,015-INFO]: eta: 7h 12min, epoch: 2, iter: 13.14%, lr: 1.00e-02, loss: 0.144313
+[2024-12-12 12:08:59,145-INFO]: eta: 7h 08min, epoch: 2, iter: 17.52%, lr: 1.00e-02, loss: 0.144427
+[2024-12-12 12:10:44,276-INFO]: eta: 7h 09min, epoch: 2, iter: 21.89%, lr: 1.00e-02, loss: 0.142878
+[2024-12-12 12:12:29,405-INFO]: eta: 7h 04min, epoch: 2, iter: 26.27%, lr: 1.00e-02, loss: 0.143216
+[2024-12-12 12:14:14,475-INFO]: eta: 7h 02min, epoch: 2, iter: 30.65%, lr: 1.00e-02, loss: 0.142903
+[2024-12-12 12:15:59,541-INFO]: eta: 7h 06min, epoch: 2, iter: 35.03%, lr: 1.00e-02, loss: 0.142185
+[2024-12-12 12:17:44,597-INFO]: eta: 7h 00min, epoch: 2, iter: 39.41%, lr: 1.00e-02, loss: 0.141624
+[2024-12-12 12:19:29,739-INFO]: eta: 6h 57min, epoch: 2, iter: 43.79%, lr: 1.00e-02, loss: 0.141836
+[2024-12-12 12:21:14,780-INFO]: eta: 6h 56min, epoch: 2, iter: 48.17%, lr: 1.00e-02, loss: 0.142763
+[2024-12-12 12:22:59,807-INFO]: eta: 6h 54min, epoch: 2, iter: 52.55%, lr: 1.00e-02, loss: 0.142745
+[2024-12-12 12:24:44,911-INFO]: eta: 6h 52min, epoch: 2, iter: 56.92%, lr: 1.00e-02, loss: 0.143065
+[2024-12-12 12:26:29,988-INFO]: eta: 6h 52min, epoch: 2, iter: 61.30%, lr: 1.00e-02, loss: 0.142630
+[2024-12-12 12:28:14,989-INFO]: eta: 6h 49min, epoch: 2, iter: 65.68%, lr: 1.00e-02, loss: 0.142529
+[2024-12-12 12:30:00,080-INFO]: eta: 6h 47min, epoch: 2, iter: 70.06%, lr: 1.00e-02, loss: 0.142841
+[2024-12-12 12:31:45,086-INFO]: eta: 6h 45min, epoch: 2, iter: 74.44%, lr: 1.00e-02, loss: 0.142861
+[2024-12-12 12:33:30,113-INFO]: eta: 6h 42min, epoch: 2, iter: 78.82%, lr: 1.00e-02, loss: 0.142518
+[2024-12-12 12:35:15,144-INFO]: eta: 6h 41min, epoch: 2, iter: 83.20%, lr: 1.00e-02, loss: 0.142794
+[2024-12-12 12:37:00,155-INFO]: eta: 6h 43min, epoch: 2, iter: 87.58%, lr: 1.00e-02, loss: 0.142275
+[2024-12-12 12:38:45,239-INFO]: eta: 6h 40min, epoch: 2, iter: 91.95%, lr: 1.00e-02, loss: 0.142237
+[2024-12-12 12:40:30,270-INFO]: eta: 6h 35min, epoch: 2, iter: 96.33%, lr: 1.00e-02, loss: 0.141941
+[2024-12-12 12:43:57,367-INFO]: epoch: 2, val_dice: 0.8530(0.8530), 0: 0.9448, 1: 0.8530
+[2024-12-12 12:45:43,730-INFO]: eta: 6h 38min, epoch: 3, iter: 4.38%, lr: 1.00e-02, loss: 0.138171
+[2024-12-12 12:47:28,727-INFO]: eta: 6h 32min, epoch: 3, iter: 8.76%, lr: 1.00e-02, loss: 0.136798
+[2024-12-12 12:49:13,710-INFO]: eta: 6h 38min, epoch: 3, iter: 13.14%, lr: 1.00e-02, loss: 0.139137
+[2024-12-12 12:50:58,677-INFO]: eta: 6h 32min, epoch: 3, iter: 17.52%, lr: 1.00e-02, loss: 0.138694
+[2024-12-12 12:52:43,617-INFO]: eta: 6h 27min, epoch: 3, iter: 21.89%, lr: 1.00e-02, loss: 0.138655
+[2024-12-12 12:54:28,624-INFO]: eta: 6h 26min, epoch: 3, iter: 26.27%, lr: 1.00e-02, loss: 0.137915
+[2024-12-12 12:56:13,591-INFO]: eta: 6h 23min, epoch: 3, iter: 30.65%, lr: 1.00e-02, loss: 0.137299
+[2024-12-12 12:57:58,613-INFO]: eta: 6h 23min, epoch: 3, iter: 35.03%, lr: 1.00e-02, loss: 0.138511
+[2024-12-12 12:59:43,591-INFO]: eta: 6h 20min, epoch: 3, iter: 39.41%, lr: 1.00e-02, loss: 0.138874
+[2024-12-12 13:01:28,632-INFO]: eta: 6h 20min, epoch: 3, iter: 43.79%, lr: 1.00e-02, loss: 0.139058
+[2024-12-12 13:03:13,618-INFO]: eta: 6h 16min, epoch: 3, iter: 48.17%, lr: 1.00e-02, loss: 0.138470
+[2024-12-12 13:04:58,592-INFO]: eta: 6h 18min, epoch: 3, iter: 52.55%, lr: 1.00e-02, loss: 0.138342
+[2024-12-12 13:06:43,610-INFO]: eta: 6h 17min, epoch: 3, iter: 56.92%, lr: 1.00e-02, loss: 0.137681
+[2024-12-12 13:08:28,540-INFO]: eta: 6h 09min, epoch: 3, iter: 61.30%, lr: 1.00e-02, loss: 0.137454
+[2024-12-12 13:10:13,532-INFO]: eta: 6h 13min, epoch: 3, iter: 65.68%, lr: 1.00e-02, loss: 0.137872
+[2024-12-12 13:11:59,306-INFO]: eta: 6h 31min, epoch: 3, iter: 70.06%, lr: 1.00e-02, loss: 0.137864
+[2024-12-12 13:13:49,225-INFO]: eta: 6h 16min, epoch: 3, iter: 74.44%, lr: 1.00e-02, loss: 0.137735
+[2024-12-12 13:15:34,685-INFO]: eta: 6h 05min, epoch: 3, iter: 78.82%, lr: 1.00e-02, loss: 0.137533
+[2024-12-12 13:17:19,572-INFO]: eta: 6h 03min, epoch: 3, iter: 83.20%, lr: 1.00e-02, loss: 0.137590
+[2024-12-12 13:19:04,421-INFO]: eta: 6h 01min, epoch: 3, iter: 87.58%, lr: 1.00e-02, loss: 0.137538
+[2024-12-12 13:20:49,228-INFO]: eta: 5h 57min, epoch: 3, iter: 91.95%, lr: 1.00e-02, loss: 0.137411
+[2024-12-12 13:22:34,090-INFO]: eta: 5h 59min, epoch: 3, iter: 96.33%, lr: 1.00e-02, loss: 0.136944
+[2024-12-12 13:26:00,836-INFO]: epoch: 3, val_dice: 0.8531(0.8531), 0: 0.9449, 1: 0.8531
+[2024-12-12 13:27:47,097-INFO]: eta: 6h 03min, epoch: 4, iter: 4.38%, lr: 1.00e-02, loss: 0.132732
+[2024-12-12 13:29:31,945-INFO]: eta: 5h 53min, epoch: 4, iter: 8.76%, lr: 1.00e-02, loss: 0.132071
+[2024-12-12 13:31:16,814-INFO]: eta: 5h 51min, epoch: 4, iter: 13.14%, lr: 1.00e-02, loss: 0.128588
+[2024-12-12 13:33:01,697-INFO]: eta: 5h 57min, epoch: 4, iter: 17.52%, lr: 1.00e-02, loss: 0.129060
+[2024-12-12 13:34:46,580-INFO]: eta: 5h 48min, epoch: 4, iter: 21.89%, lr: 1.00e-02, loss: 0.130884
+[2024-12-12 13:36:31,432-INFO]: eta: 5h 46min, epoch: 4, iter: 26.27%, lr: 1.00e-02, loss: 0.130478
+[2024-12-12 13:38:16,268-INFO]: eta: 5h 50min, epoch: 4, iter: 30.65%, lr: 1.00e-02, loss: 0.132138
+[2024-12-12 13:40:01,104-INFO]: eta: 5h 42min, epoch: 4, iter: 35.03%, lr: 1.00e-02, loss: 0.132615
+[2024-12-12 13:41:45,996-INFO]: eta: 5h 43min, epoch: 4, iter: 39.41%, lr: 1.00e-02, loss: 0.132582
+[2024-12-12 13:43:30,814-INFO]: eta: 5h 47min, epoch: 4, iter: 43.79%, lr: 1.00e-02, loss: 0.132126
+[2024-12-12 13:45:15,609-INFO]: eta: 5h 37min, epoch: 4, iter: 48.17%, lr: 1.00e-02, loss: 0.131588
+[2024-12-12 13:47:00,461-INFO]: eta: 5h 35min, epoch: 4, iter: 52.55%, lr: 1.00e-02, loss: 0.132160
+[2024-12-12 13:48:45,295-INFO]: eta: 5h 42min, epoch: 4, iter: 56.92%, lr: 1.00e-02, loss: 0.131666
+[2024-12-12 13:50:30,100-INFO]: eta: 5h 33min, epoch: 4, iter: 61.30%, lr: 1.00e-02, loss: 0.131167
+[2024-12-12 13:52:14,931-INFO]: eta: 5h 29min, epoch: 4, iter: 65.68%, lr: 1.00e-02, loss: 0.130517
+[2024-12-12 13:53:59,802-INFO]: eta: 5h 37min, epoch: 4, iter: 70.06%, lr: 1.00e-02, loss: 0.130847
+[2024-12-12 13:55:44,669-INFO]: eta: 5h 28min, epoch: 4, iter: 74.44%, lr: 1.00e-02, loss: 0.130971
+[2024-12-12 13:57:29,471-INFO]: eta: 5h 24min, epoch: 4, iter: 78.82%, lr: 1.00e-02, loss: 0.130757
+[2024-12-12 13:59:14,300-INFO]: eta: 5h 33min, epoch: 4, iter: 83.20%, lr: 1.00e-02, loss: 0.131072
+[2024-12-12 14:00:59,120-INFO]: eta: 5h 22min, epoch: 4, iter: 87.58%, lr: 1.00e-02, loss: 0.130914
+[2024-12-12 14:02:44,003-INFO]: eta: 5h 21min, epoch: 4, iter: 91.95%, lr: 1.00e-02, loss: 0.130875
+[2024-12-12 14:04:28,770-INFO]: eta: 5h 19min, epoch: 4, iter: 96.33%, lr: 1.00e-02, loss: 0.131684
+[2024-12-12 14:07:55,431-INFO]: epoch: 4, val_dice: 0.8482(0.8531), 0: 0.9414, 1: 0.8482
+[2024-12-12 14:09:41,480-INFO]: eta: 5h 15min, epoch: 5, iter: 4.38%, lr: 1.00e-02, loss: 0.126857
+[2024-12-12 14:11:26,304-INFO]: eta: 5h 13min, epoch: 5, iter: 8.76%, lr: 1.00e-02, loss: 0.126288
+[2024-12-12 14:13:11,160-INFO]: eta: 5h 12min, epoch: 5, iter: 13.14%, lr: 1.00e-02, loss: 0.126287
+[2024-12-12 14:14:55,981-INFO]: eta: 5h 07min, epoch: 5, iter: 17.52%, lr: 1.00e-02, loss: 0.125433
+[2024-12-12 14:16:40,834-INFO]: eta: 5h 10min, epoch: 5, iter: 21.89%, lr: 1.00e-02, loss: 0.126115
+[2024-12-12 14:18:25,689-INFO]: eta: 5h 06min, epoch: 5, iter: 26.27%, lr: 1.00e-02, loss: 0.126153
+[2024-12-12 14:20:10,515-INFO]: eta: 5h 03min, epoch: 5, iter: 30.65%, lr: 1.00e-02, loss: 0.126633
+[2024-12-12 14:21:55,340-INFO]: eta: 5h 04min, epoch: 5, iter: 35.03%, lr: 1.00e-02, loss: 0.127738
+[2024-12-12 14:23:40,184-INFO]: eta: 5h 01min, epoch: 5, iter: 39.41%, lr: 1.00e-02, loss: 0.128570
+[2024-12-12 14:25:25,042-INFO]: eta: 5h 00min, epoch: 5, iter: 43.79%, lr: 1.00e-02, loss: 0.128629
+[2024-12-12 14:27:09,915-INFO]: eta: 4h 57min, epoch: 5, iter: 48.17%, lr: 1.00e-02, loss: 0.128174
+[2024-12-12 14:28:54,743-INFO]: eta: 4h 58min, epoch: 5, iter: 52.55%, lr: 1.00e-02, loss: 0.127562
+[2024-12-12 14:30:39,542-INFO]: eta: 4h 52min, epoch: 5, iter: 56.92%, lr: 1.00e-02, loss: 0.127931
+[2024-12-12 14:32:24,346-INFO]: eta: 4h 53min, epoch: 5, iter: 61.30%, lr: 1.00e-02, loss: 0.127581
+[2024-12-12 14:34:09,155-INFO]: eta: 4h 50min, epoch: 5, iter: 65.68%, lr: 1.00e-02, loss: 0.127397
+[2024-12-12 14:35:53,973-INFO]: eta: 4h 47min, epoch: 5, iter: 70.06%, lr: 1.00e-02, loss: 0.127700
+[2024-12-12 14:37:38,743-INFO]: eta: 4h 46min, epoch: 5, iter: 74.44%, lr: 1.00e-02, loss: 0.127748
+[2024-12-12 14:39:23,551-INFO]: eta: 4h 45min, epoch: 5, iter: 78.82%, lr: 1.00e-02, loss: 0.128010
+[2024-12-12 14:41:08,345-INFO]: eta: 4h 41min, epoch: 5, iter: 83.20%, lr: 1.00e-02, loss: 0.128169
+[2024-12-12 14:42:53,165-INFO]: eta: 4h 44min, epoch: 5, iter: 87.58%, lr: 1.00e-02, loss: 0.127994
+[2024-12-12 14:44:37,952-INFO]: eta: 4h 41min, epoch: 5, iter: 91.95%, lr: 1.00e-02, loss: 0.128103
+[2024-12-12 14:46:22,783-INFO]: eta: 4h 36min, epoch: 5, iter: 96.33%, lr: 1.00e-02, loss: 0.127918
+[2024-12-12 14:49:49,479-INFO]: epoch: 5, val_dice: 0.8624(0.8624), 0: 0.9468, 1: 0.8624
+[2024-12-12 14:51:35,662-INFO]: eta: 4h 36min, epoch: 6, iter: 4.38%, lr: 1.00e-02, loss: 0.123435
+[2024-12-12 14:53:20,456-INFO]: eta: 4h 33min, epoch: 6, iter: 8.76%, lr: 1.00e-02, loss: 0.125869
+[2024-12-12 14:55:05,251-INFO]: eta: 4h 37min, epoch: 6, iter: 13.14%, lr: 1.00e-02, loss: 0.125035
+[2024-12-12 14:56:50,081-INFO]: eta: 4h 31min, epoch: 6, iter: 17.52%, lr: 1.00e-02, loss: 0.126169
+[2024-12-12 14:58:34,887-INFO]: eta: 4h 27min, epoch: 6, iter: 21.89%, lr: 1.00e-02, loss: 0.124843
+[2024-12-12 15:00:19,700-INFO]: eta: 4h 33min, epoch: 6, iter: 26.27%, lr: 1.00e-02, loss: 0.125727
+[2024-12-12 15:02:04,490-INFO]: eta: 4h 25min, epoch: 6, iter: 30.65%, lr: 1.00e-02, loss: 0.125280
+[2024-12-12 15:03:49,281-INFO]: eta: 4h 23min, epoch: 6, iter: 35.03%, lr: 1.00e-02, loss: 0.125298
+[2024-12-12 15:05:34,142-INFO]: eta: 4h 27min, epoch: 6, iter: 39.41%, lr: 1.00e-02, loss: 0.125168
+[2024-12-12 15:07:18,914-INFO]: eta: 4h 20min, epoch: 6, iter: 43.79%, lr: 1.00e-02, loss: 0.125190
+[2024-12-12 15:09:03,686-INFO]: eta: 4h 18min, epoch: 6, iter: 48.17%, lr: 1.00e-02, loss: 0.125007
+[2024-12-12 15:10:48,514-INFO]: eta: 4h 20min, epoch: 6, iter: 52.55%, lr: 1.00e-02, loss: 0.125145
+[2024-12-12 15:12:33,308-INFO]: eta: 4h 13min, epoch: 6, iter: 56.92%, lr: 1.00e-02, loss: 0.125488
+[2024-12-12 15:14:18,146-INFO]: eta: 4h 14min, epoch: 6, iter: 61.30%, lr: 1.00e-02, loss: 0.125666
+[2024-12-12 15:16:02,954-INFO]: eta: 4h 16min, epoch: 6, iter: 65.68%, lr: 1.00e-02, loss: 0.125696
+[2024-12-12 15:17:47,733-INFO]: eta: 4h 09min, epoch: 6, iter: 70.06%, lr: 1.00e-02, loss: 0.125682
+[2024-12-12 15:19:32,502-INFO]: eta: 4h 07min, epoch: 6, iter: 74.44%, lr: 1.00e-02, loss: 0.125861
+[2024-12-12 15:21:17,358-INFO]: eta: 4h 10min, epoch: 6, iter: 78.82%, lr: 1.00e-02, loss: 0.125751
+[2024-12-12 15:23:02,194-INFO]: eta: 4h 05min, epoch: 6, iter: 83.20%, lr: 1.00e-02, loss: 0.125445
+[2024-12-12 15:24:46,931-INFO]: eta: 4h 02min, epoch: 6, iter: 87.58%, lr: 1.00e-02, loss: 0.125370
+[2024-12-12 15:26:31,692-INFO]: eta: 4h 01min, epoch: 6, iter: 91.95%, lr: 1.00e-02, loss: 0.125346
+[2024-12-12 15:28:16,411-INFO]: eta: 3h 58min, epoch: 6, iter: 96.33%, lr: 1.00e-02, loss: 0.125401
+[2024-12-12 15:31:43,194-INFO]: epoch: 6, val_dice: 0.8647(0.8647), 0: 0.9468, 1: 0.8647
+[2024-12-12 15:33:29,296-INFO]: eta: 3h 56min, epoch: 7, iter: 4.38%, lr: 1.00e-02, loss: 0.125986
+[2024-12-12 15:35:14,057-INFO]: eta: 3h 55min, epoch: 7, iter: 8.76%, lr: 1.00e-02, loss: 0.124327
+[2024-12-12 15:36:58,942-INFO]: eta: 3h 52min, epoch: 7, iter: 13.14%, lr: 1.00e-02, loss: 0.125048
+[2024-12-12 15:38:43,684-INFO]: eta: 3h 51min, epoch: 7, iter: 17.52%, lr: 1.00e-02, loss: 0.126516
+[2024-12-12 15:40:28,427-INFO]: eta: 3h 49min, epoch: 7, iter: 21.89%, lr: 1.00e-02, loss: 0.126358
+[2024-12-12 15:42:13,170-INFO]: eta: 3h 45min, epoch: 7, iter: 26.27%, lr: 1.00e-02, loss: 0.125243
+[2024-12-12 15:43:58,051-INFO]: eta: 3h 46min, epoch: 7, iter: 30.65%, lr: 1.00e-02, loss: 0.125665
+[2024-12-12 15:45:42,751-INFO]: eta: 3h 42min, epoch: 7, iter: 35.03%, lr: 1.00e-02, loss: 0.125887
+[2024-12-12 15:47:27,514-INFO]: eta: 3h 42min, epoch: 7, iter: 39.41%, lr: 1.00e-02, loss: 0.125615
+[2024-12-12 15:49:12,373-INFO]: eta: 3h 39min, epoch: 7, iter: 43.79%, lr: 1.00e-02, loss: 0.125677
+[2024-12-12 15:50:57,177-INFO]: eta: 3h 38min, epoch: 7, iter: 48.17%, lr: 1.00e-02, loss: 0.125027
+[2024-12-12 15:52:41,882-INFO]: eta: 3h 36min, epoch: 7, iter: 52.55%, lr: 1.00e-02, loss: 0.124386
+[2024-12-12 15:54:26,600-INFO]: eta: 3h 36min, epoch: 7, iter: 56.92%, lr: 1.00e-02, loss: 0.124373
+[2024-12-12 15:56:11,302-INFO]: eta: 3h 33min, epoch: 7, iter: 61.30%, lr: 1.00e-02, loss: 0.123948
+[2024-12-12 15:57:56,021-INFO]: eta: 3h 30min, epoch: 7, iter: 65.68%, lr: 1.00e-02, loss: 0.123800
+[2024-12-12 15:59:40,734-INFO]: eta: 3h 30min, epoch: 7, iter: 70.06%, lr: 1.00e-02, loss: 0.123691
+[2024-12-12 16:01:25,445-INFO]: eta: 3h 29min, epoch: 7, iter: 74.44%, lr: 1.00e-02, loss: 0.123464
+[2024-12-12 16:03:10,160-INFO]: eta: 3h 25min, epoch: 7, iter: 78.82%, lr: 1.00e-02, loss: 0.123483
+[2024-12-12 16:04:54,856-INFO]: eta: 3h 25min, epoch: 7, iter: 83.20%, lr: 1.00e-02, loss: 0.123255
+[2024-12-12 16:06:40,355-INFO]: eta: 3h 22min, epoch: 7, iter: 87.58%, lr: 1.00e-02, loss: 0.123172
+[2024-12-12 16:08:25,129-INFO]: eta: 3h 20min, epoch: 7, iter: 91.95%, lr: 1.00e-02, loss: 0.123108
+[2024-12-12 16:10:09,890-INFO]: eta: 3h 19min, epoch: 7, iter: 96.33%, lr: 1.00e-02, loss: 0.123285
+[2024-12-12 16:13:36,580-INFO]: epoch: 7, val_dice: 0.8550(0.8647), 0: 0.9478, 1: 0.8550
+[2024-12-12 16:15:22,567-INFO]: eta: 3h 16min, epoch: 8, iter: 4.38%, lr: 1.00e-02, loss: 0.120109
+[2024-12-12 16:17:07,461-INFO]: eta: 3h 19min, epoch: 8, iter: 8.76%, lr: 1.00e-02, loss: 0.117958
+[2024-12-12 16:18:52,373-INFO]: eta: 3h 14min, epoch: 8, iter: 13.14%, lr: 1.00e-02, loss: 0.121635
+[2024-12-12 16:20:37,255-INFO]: eta: 3h 10min, epoch: 8, iter: 17.52%, lr: 1.00e-02, loss: 0.120869
+[2024-12-12 16:22:22,245-INFO]: eta: 3h 14min, epoch: 8, iter: 21.89%, lr: 1.00e-02, loss: 0.122075
+[2024-12-12 16:24:07,057-INFO]: eta: 3h 07min, epoch: 8, iter: 26.27%, lr: 1.00e-02, loss: 0.121973
+[2024-12-12 16:25:51,910-INFO]: eta: 3h 06min, epoch: 8, iter: 30.65%, lr: 1.00e-02, loss: 0.121899
+[2024-12-12 16:27:36,685-INFO]: eta: 3h 05min, epoch: 8, iter: 35.03%, lr: 1.00e-02, loss: 0.121382
+[2024-12-12 16:29:21,517-INFO]: eta: 3h 02min, epoch: 8, iter: 39.41%, lr: 1.00e-02, loss: 0.121440
+[2024-12-12 16:31:06,426-INFO]: eta: 3h 00min, epoch: 8, iter: 43.79%, lr: 1.00e-02, loss: 0.121425
+[2024-12-12 16:32:51,308-INFO]: eta: 2h 59min, epoch: 8, iter: 48.17%, lr: 1.00e-02, loss: 0.121935
+[2024-12-12 16:34:36,150-INFO]: eta: 2h 56min, epoch: 8, iter: 52.55%, lr: 1.00e-02, loss: 0.121612
+[2024-12-12 16:36:20,991-INFO]: eta: 2h 54min, epoch: 8, iter: 56.92%, lr: 1.00e-02, loss: 0.121564
+[2024-12-12 16:38:05,865-INFO]: eta: 2h 53min, epoch: 8, iter: 61.30%, lr: 1.00e-02, loss: 0.121830
+[2024-12-12 16:39:50,786-INFO]: eta: 2h 52min, epoch: 8, iter: 65.68%, lr: 1.00e-02, loss: 0.121521
+[2024-12-12 16:41:35,632-INFO]: eta: 2h 48min, epoch: 8, iter: 70.06%, lr: 1.00e-02, loss: 0.121006
+[2024-12-12 16:43:20,449-INFO]: eta: 2h 47min, epoch: 8, iter: 74.44%, lr: 1.00e-02, loss: 0.121089
+[2024-12-12 16:45:05,285-INFO]: eta: 2h 46min, epoch: 8, iter: 78.82%, lr: 1.00e-02, loss: 0.121119
+[2024-12-12 16:46:50,106-INFO]: eta: 2h 45min, epoch: 8, iter: 83.20%, lr: 1.00e-02, loss: 0.121377
+[2024-12-12 16:48:34,996-INFO]: eta: 2h 44min, epoch: 8, iter: 87.58%, lr: 1.00e-02, loss: 0.121648
+[2024-12-12 16:50:19,810-INFO]: eta: 2h 42min, epoch: 8, iter: 91.95%, lr: 1.00e-02, loss: 0.121606
+[2024-12-12 16:52:04,687-INFO]: eta: 2h 39min, epoch: 8, iter: 96.33%, lr: 1.00e-02, loss: 0.121432
+[2024-12-12 16:55:31,486-INFO]: epoch: 8, val_dice: 0.8601(0.8647), 0: 0.9461, 1: 0.8601
+[2024-12-12 16:57:17,402-INFO]: eta: 2h 36min, epoch: 9, iter: 4.38%, lr: 1.00e-02, loss: 0.118861
+[2024-12-12 16:59:02,182-INFO]: eta: 2h 36min, epoch: 9, iter: 8.76%, lr: 1.00e-02, loss: 0.119195
+[2024-12-12 17:00:47,095-INFO]: eta: 2h 37min, epoch: 9, iter: 13.14%, lr: 1.00e-02, loss: 0.118720
+[2024-12-12 17:02:31,939-INFO]: eta: 2h 31min, epoch: 9, iter: 17.52%, lr: 1.00e-02, loss: 0.118109
+[2024-12-12 17:04:16,775-INFO]: eta: 2h 29min, epoch: 9, iter: 21.89%, lr: 1.00e-02, loss: 0.120040
+[2024-12-12 17:06:01,615-INFO]: eta: 2h 30min, epoch: 9, iter: 26.27%, lr: 1.00e-02, loss: 0.119762
+[2024-12-12 17:07:46,425-INFO]: eta: 2h 27min, epoch: 9, iter: 30.65%, lr: 1.00e-02, loss: 0.119402
+[2024-12-12 17:09:31,258-INFO]: eta: 2h 24min, epoch: 9, iter: 35.03%, lr: 1.00e-02, loss: 0.120344
+[2024-12-12 17:11:16,102-INFO]: eta: 2h 24min, epoch: 9, iter: 39.41%, lr: 1.00e-02, loss: 0.119514
+[2024-12-12 17:13:00,875-INFO]: eta: 2h 21min, epoch: 9, iter: 43.79%, lr: 1.00e-02, loss: 0.119780
+[2024-12-12 17:14:45,703-INFO]: eta: 2h 19min, epoch: 9, iter: 48.17%, lr: 1.00e-02, loss: 0.118879
+[2024-12-12 17:16:30,522-INFO]: eta: 2h 17min, epoch: 9, iter: 52.55%, lr: 1.00e-02, loss: 0.118872
+[2024-12-12 17:18:15,299-INFO]: eta: 2h 16min, epoch: 9, iter: 56.92%, lr: 1.00e-02, loss: 0.118993
+[2024-12-12 17:20:00,164-INFO]: eta: 2h 13min, epoch: 9, iter: 61.30%, lr: 1.00e-02, loss: 0.119013
+[2024-12-12 17:21:44,978-INFO]: eta: 2h 11min, epoch: 9, iter: 65.68%, lr: 1.00e-02, loss: 0.118905
+[2024-12-12 17:23:29,833-INFO]: eta: 2h 10min, epoch: 9, iter: 70.06%, lr: 1.00e-02, loss: 0.118808
+[2024-12-12 17:25:14,671-INFO]: eta: 2h 09min, epoch: 9, iter: 74.44%, lr: 1.00e-02, loss: 0.118813
+[2024-12-12 17:26:59,469-INFO]: eta: 2h 07min, epoch: 9, iter: 78.82%, lr: 1.00e-02, loss: 0.118641
+[2024-12-12 17:28:44,286-INFO]: eta: 2h 05min, epoch: 9, iter: 83.20%, lr: 1.00e-02, loss: 0.118693
+[2024-12-12 17:30:29,081-INFO]: eta: 2h 02min, epoch: 9, iter: 87.58%, lr: 1.00e-02, loss: 0.118716
+[2024-12-12 17:32:13,915-INFO]: eta: 2h 02min, epoch: 9, iter: 91.95%, lr: 1.00e-02, loss: 0.119067
+[2024-12-12 17:33:58,790-INFO]: eta: 2h 00min, epoch: 9, iter: 96.33%, lr: 1.00e-02, loss: 0.119160
+[2024-12-12 17:37:25,592-INFO]: epoch: 9, val_dice: 0.8662(0.8662), 0: 0.9493, 1: 0.8662
+[2024-12-12 17:39:11,821-INFO]: eta: 1h 59min, epoch: 10, iter: 4.38%, lr: 1.00e-02, loss: 0.121431
+[2024-12-12 17:40:56,565-INFO]: eta: 1h 55min, epoch: 10, iter: 8.76%, lr: 1.00e-02, loss: 0.116335
+[2024-12-12 17:42:41,322-INFO]: eta: 1h 53min, epoch: 10, iter: 13.14%, lr: 1.00e-02, loss: 0.117196
+[2024-12-12 17:44:26,134-INFO]: eta: 1h 53min, epoch: 10, iter: 17.52%, lr: 1.00e-02, loss: 0.118255
+[2024-12-12 17:46:10,912-INFO]: eta: 1h 50min, epoch: 10, iter: 21.89%, lr: 1.00e-02, loss: 0.117747
+[2024-12-12 17:47:55,711-INFO]: eta: 1h 48min, epoch: 10, iter: 26.27%, lr: 1.00e-02, loss: 0.118019
+[2024-12-12 17:49:40,486-INFO]: eta: 1h 48min, epoch: 10, iter: 30.65%, lr: 1.00e-02, loss: 0.118905
+[2024-12-12 17:51:25,280-INFO]: eta: 1h 44min, epoch: 10, iter: 35.03%, lr: 1.00e-02, loss: 0.118873
+[2024-12-12 17:53:10,078-INFO]: eta: 1h 43min, epoch: 10, iter: 39.41%, lr: 1.00e-02, loss: 0.118900
+[2024-12-12 17:54:54,843-INFO]: eta: 1h 43min, epoch: 10, iter: 43.79%, lr: 1.00e-02, loss: 0.118188
+[2024-12-12 17:56:39,582-INFO]: eta: 1h 39min, epoch: 10, iter: 48.17%, lr: 1.00e-02, loss: 0.118335
+[2024-12-12 17:58:24,347-INFO]: eta: 1h 38min, epoch: 10, iter: 52.55%, lr: 1.00e-02, loss: 0.117997
+[2024-12-12 18:00:09,100-INFO]: eta: 1h 36min, epoch: 10, iter: 56.92%, lr: 1.00e-02, loss: 0.118301
+[2024-12-12 18:01:53,884-INFO]: eta: 1h 34min, epoch: 10, iter: 61.30%, lr: 1.00e-02, loss: 0.117732
+[2024-12-12 18:03:38,609-INFO]: eta: 1h 31min, epoch: 10, iter: 65.68%, lr: 1.00e-02, loss: 0.117486
+[2024-12-12 18:05:23,366-INFO]: eta: 1h 31min, epoch: 10, iter: 70.06%, lr: 1.00e-02, loss: 0.118296
+[2024-12-12 18:07:08,094-INFO]: eta: 1h 29min, epoch: 10, iter: 74.44%, lr: 1.00e-02, loss: 0.118064
+[2024-12-12 18:08:52,898-INFO]: eta: 1h 27min, epoch: 10, iter: 78.82%, lr: 1.00e-02, loss: 0.118319
+[2024-12-12 18:10:37,622-INFO]: eta: 1h 25min, epoch: 10, iter: 83.20%, lr: 1.00e-02, loss: 0.118443
+[2024-12-12 18:12:22,331-INFO]: eta: 1h 24min, epoch: 10, iter: 87.58%, lr: 1.00e-02, loss: 0.118527
+[2024-12-12 18:14:07,063-INFO]: eta: 1h 22min, epoch: 10, iter: 91.95%, lr: 1.00e-02, loss: 0.118554
+[2024-12-12 18:15:51,771-INFO]: eta: 1h 20min, epoch: 10, iter: 96.33%, lr: 1.00e-02, loss: 0.118373
+[2024-12-12 18:19:18,324-INFO]: epoch: 10, val_dice: 0.8622(0.8654), 0: 0.9468, 1: 0.8622
+[2024-12-12 18:21:04,151-INFO]: eta: 1h 18min, epoch: 11, iter: 4.38%, lr: 1.00e-02, loss: 0.119517
+[2024-12-12 18:22:48,920-INFO]: eta: 1h 17min, epoch: 11, iter: 8.76%, lr: 1.00e-02, loss: 0.119261
+[2024-12-12 18:24:33,683-INFO]: eta: 1h 14min, epoch: 11, iter: 13.14%, lr: 1.00e-02, loss: 0.118153
+[2024-12-12 18:26:18,439-INFO]: eta: 1h 12min, epoch: 11, iter: 17.52%, lr: 1.00e-02, loss: 0.117081
+[2024-12-12 18:28:03,264-INFO]: eta: 1h 12min, epoch: 11, iter: 21.89%, lr: 1.00e-02, loss: 0.116530
+[2024-12-12 18:29:47,983-INFO]: eta: 1h 09min, epoch: 11, iter: 26.27%, lr: 1.00e-02, loss: 0.114843
+[2024-12-12 18:31:32,781-INFO]: eta: 1h 07min, epoch: 11, iter: 30.65%, lr: 1.00e-02, loss: 0.116313
+[2024-12-12 18:33:17,539-INFO]: eta: 1h 06min, epoch: 11, iter: 35.03%, lr: 1.00e-02, loss: 0.117153
+[2024-12-12 18:35:02,237-INFO]: eta: 1h 03min, epoch: 11, iter: 39.41%, lr: 1.00e-02, loss: 0.116883
+[2024-12-12 18:36:47,050-INFO]: eta: 1h 01min, epoch: 11, iter: 43.79%, lr: 1.00e-02, loss: 0.117281
+[2024-12-12 18:38:31,817-INFO]: eta: 0h 59min, epoch: 11, iter: 48.17%, lr: 1.00e-02, loss: 0.116885
+[2024-12-12 18:40:16,583-INFO]: eta: 0h 58min, epoch: 11, iter: 52.55%, lr: 1.00e-02, loss: 0.116663
+[2024-12-12 18:42:01,339-INFO]: eta: 0h 56min, epoch: 11, iter: 56.92%, lr: 1.00e-02, loss: 0.116584
+[2024-12-12 18:43:46,078-INFO]: eta: 0h 55min, epoch: 11, iter: 61.30%, lr: 1.00e-02, loss: 0.116550
+[2024-12-12 18:45:30,811-INFO]: eta: 0h 53min, epoch: 11, iter: 65.68%, lr: 1.00e-02, loss: 0.116497
+[2024-12-12 18:47:15,569-INFO]: eta: 0h 51min, epoch: 11, iter: 70.06%, lr: 1.00e-02, loss: 0.116370
+[2024-12-12 18:49:00,351-INFO]: eta: 0h 49min, epoch: 11, iter: 74.44%, lr: 1.00e-02, loss: 0.116255
+[2024-12-12 18:50:45,101-INFO]: eta: 0h 47min, epoch: 11, iter: 78.82%, lr: 1.00e-02, loss: 0.115994
+[2024-12-12 18:52:29,863-INFO]: eta: 0h 46min, epoch: 11, iter: 83.20%, lr: 1.00e-02, loss: 0.115937
+[2024-12-12 18:54:14,592-INFO]: eta: 0h 44min, epoch: 11, iter: 87.58%, lr: 1.00e-02, loss: 0.115720
+[2024-12-12 18:55:59,354-INFO]: eta: 0h 42min, epoch: 11, iter: 91.95%, lr: 1.00e-02, loss: 0.115846
+[2024-12-12 18:57:44,080-INFO]: eta: 0h 40min, epoch: 11, iter: 96.33%, lr: 1.00e-02, loss: 0.116384
+[2024-12-12 19:01:10,857-INFO]: epoch: 11, val_dice: 0.8596(0.8654), 0: 0.9492, 1: 0.8596
+[2024-12-12 19:02:56,698-INFO]: eta: 0h 37min, epoch: 12, iter: 4.38%, lr: 1.00e-02, loss: 0.114059
+[2024-12-12 19:04:41,463-INFO]: eta: 0h 36min, epoch: 12, iter: 8.76%, lr: 1.00e-02, loss: 0.112445
+[2024-12-12 19:06:26,248-INFO]: eta: 0h 34min, epoch: 12, iter: 13.14%, lr: 1.00e-02, loss: 0.116399
+[2024-12-12 19:08:11,092-INFO]: eta: 0h 32min, epoch: 12, iter: 17.52%, lr: 1.00e-02, loss: 0.116842
+[2024-12-12 19:09:55,868-INFO]: eta: 0h 30min, epoch: 12, iter: 21.89%, lr: 1.00e-02, loss: 0.116346
+[2024-12-12 19:11:40,644-INFO]: eta: 0h 29min, epoch: 12, iter: 26.27%, lr: 1.00e-02, loss: 0.116086
+[2024-12-12 19:13:25,346-INFO]: eta: 0h 27min, epoch: 12, iter: 30.65%, lr: 1.00e-02, loss: 0.115114
+[2024-12-12 19:15:10,125-INFO]: eta: 0h 25min, epoch: 12, iter: 35.03%, lr: 1.00e-02, loss: 0.115746
+[2024-12-12 19:16:54,972-INFO]: eta: 0h 24min, epoch: 12, iter: 39.41%, lr: 1.00e-02, loss: 0.115609
+[2024-12-12 19:18:39,662-INFO]: eta: 0h 22min, epoch: 12, iter: 43.79%, lr: 1.00e-02, loss: 0.115126
+[2024-12-12 19:20:24,412-INFO]: eta: 0h 20min, epoch: 12, iter: 48.17%, lr: 1.00e-02, loss: 0.115188
+[2024-12-12 19:22:09,141-INFO]: eta: 0h 18min, epoch: 12, iter: 52.55%, lr: 1.00e-02, loss: 0.115578
+[2024-12-12 19:23:53,921-INFO]: eta: 0h 17min, epoch: 12, iter: 56.92%, lr: 1.00e-02, loss: 0.116280
+[2024-12-12 19:25:38,676-INFO]: eta: 0h 15min, epoch: 12, iter: 61.30%, lr: 1.00e-02, loss: 0.116350
+[2024-12-12 19:27:23,420-INFO]: eta: 0h 13min, epoch: 12, iter: 65.68%, lr: 1.00e-02, loss: 0.115961
+[2024-12-12 19:29:08,141-INFO]: eta: 0h 11min, epoch: 12, iter: 70.06%, lr: 1.00e-02, loss: 0.115538
+[2024-12-12 19:30:52,889-INFO]: eta: 0h 10min, epoch: 12, iter: 74.44%, lr: 1.00e-02, loss: 0.115777
+[2024-12-12 19:32:37,614-INFO]: eta: 0h 08min, epoch: 12, iter: 78.82%, lr: 1.00e-02, loss: 0.115888
+[2024-12-12 19:34:22,365-INFO]: eta: 0h 06min, epoch: 12, iter: 83.20%, lr: 1.00e-02, loss: 0.115673
+[2024-12-12 19:36:07,106-INFO]: eta: 0h 04min, epoch: 12, iter: 87.58%, lr: 1.00e-02, loss: 0.115676
+[2024-12-12 19:37:51,877-INFO]: eta: 0h 03min, epoch: 12, iter: 91.95%, lr: 1.00e-02, loss: 0.115278
+[2024-12-12 19:39:36,592-INFO]: eta: 0h 01min, epoch: 12, iter: 96.33%, lr: 1.00e-02, loss: 0.114986
+[2024-12-12 19:43:03,331-INFO]: epoch: 12, val_dice: 0.8565(0.8654), 0: 0.9495, 1: 0.8565
+
+
+=====
+EVAL
+=====
+Read 958 images!
+100%|█████████████████████████████████████████| 119/119 [00:56<00:00,  2.09it/s]
+val_dice: 0.8567, 0: 0.9496, 1: 0.8567
+
