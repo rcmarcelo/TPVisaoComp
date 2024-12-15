@@ -15,11 +15,14 @@ $ pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--c
 ```
 
 ## Conjunto de dados
+Organização:
 ```
 ├── data/
 │   ├── tissue-train-neg/     
 │   ├── tissue-train-pos-v1/
 ```
+[Download](https://drive.google.com/drive/folders/1_19Nz7mPuLReYA60UAtcnsAotTqZk0Je)
+
 ## Pré-processamento
 ```
 $ cd code/
